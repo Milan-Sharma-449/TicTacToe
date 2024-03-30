@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import React, {useState} from "react";
 import Board from "./Components/Board";
 import History from "./Components/History";
@@ -7,13 +8,14 @@ import "./Styles/root.scss";
 
 const NEW_GAME=[{board: Array(9).fill(null), isXNext: true},];
 
-const App = () => {
+function App() {
     const [history, setHistory] = useState(NEW_GAME);
     const [currentMove, setCurrentMove] = useState(0);
     const current = history[currentMove];
 
 
 const {winner, winningSquares} = calculateWinner(current.board);
+// eslint-disable-next-line no-unused-vars
 const message = winner 
 ? `Winner is ${winner}` 
 : `Next Player is ${current.isXNext ? 'X' : 'O'}`;
@@ -51,9 +53,9 @@ const onNewGame=() => {
     <button type="button" on onClick={onNewGame} className={`btn-reset ${winner ? 'active' : ''}`}>Start new Game</button>
     <h2 style={{fontWeight : 'normal'}}>Current game history</h2>
     <History history = {history} moveTo ={moveTo} currentMove={currentMove} />
-    <div className="bg-balls"></div>
+    <div className="bg-balls" />
   </div>
   );
-};
+}
 export default App;
 

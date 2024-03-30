@@ -1,6 +1,6 @@
 import React from 'react'
 
-const StatusMessage = ({winner, current}) => {
+function StatusMessage({winner, current}) {
 
         const noMovesLeft = current.board.every((el) => el !==null);
   return (

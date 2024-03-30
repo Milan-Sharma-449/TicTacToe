@@ -1,20 +1,23 @@
 {
+  "homepage": "https://milansharma.site/tictactoe",
   "name": "tictactoe",
   "version": "0.1.0",
   "description": "",
   "license": "MIT",
   "scripts": {
-    "start": "vite",
-    "preview": "vite preview",
-    "build": "npm run clear && vite build",
+    "start": "react-scripts start",
+    "build": "npm run clear && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "clear": "rimraf build",
     "lint": "eslint src/**/*.js",
     "format": "prettier --write src/**/*.js",
-    "format:lint": "npm run format && npm run lint",
-    "clear": "rimraf dist .vite-cache"
+    "format:lint": "npm run format && npm run lint"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -33,6 +36,18 @@
   "babel": {
     "presets": [
       "nano-react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   }
 }
